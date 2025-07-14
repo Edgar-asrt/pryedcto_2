@@ -28,7 +28,7 @@ namespace pryedcto_2
                     this._cantidadObjetos = _cantidadObjetos;
                 }
 
-                public void detectarObjeto(int _cantidadObjetos)
+                public void detectarObjeto()
                 {
                  
                 Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);

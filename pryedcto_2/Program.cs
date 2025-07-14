@@ -1,6 +1,7 @@
 ﻿using Proyecto;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
+using static pryedcto_2.Ivanna;
 
 namespace pryedcto_2
 {
@@ -20,8 +21,11 @@ namespace pryedcto_2
         }
         public void Ivanna()
         {
-           Sensores sensores = new Sensores("Sensor");
-           sensores.detectarObjeto(3);
+          Sensores sensores = new Sensores("Sensores");
+            sensores.detectarObjeto();
+
+
+
         }
         public void extraccionB()
         {
