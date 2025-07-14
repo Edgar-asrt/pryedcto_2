@@ -18,7 +18,7 @@
         }
     }
 
-        public class ensendido:Edgar
+        public class Ensendido:Edgar
         {
             public void ensender()
         { 
@@ -61,7 +61,7 @@
             {
             
             }
-            public void MostrarDatos()
+            public void Mostrar()
             {
                 base.MostrarDatos();
                 Console.WriteLine("Datos del motor mostrados correctamente.");

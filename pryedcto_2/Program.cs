@@ -11,20 +11,19 @@ namespace pryedcto_2
 
         public void Edgar()
         {
-            ensendido encender = new ensendido();
+            Ensendido encender = new Ensendido();
             encender.ensender();
         }
         public void Edgar1()
         {
-           Datos.MostrarDatos();
+           Datos.Mostrar();
 
         }
 
 }
    internal class Program
     {
-        public Edgar Edgar;
-        public 
+       
         static void Main(string[] args)
         {
             Instancia instancia = new Instancia();
