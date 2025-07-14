@@ -4,6 +4,13 @@ namespace pryedcto_2
 {
     public class Ivanna
     {
+
+        public class Sensores
+        {
+            private string _nombre;
+
+            private Bueno _Bueno = new Bueno();
+
         
         
             private Bueno _bueno = new Bueno();
@@ -13,31 +20,70 @@ namespace pryedcto_2
                 return true;
             }
 
-            public bool Velocidad()
+            public Sensores(string _nombre)
             {
-                Console.WriteLine("Sensor: Calculando velocidad...");
-                return true;
+                this._nombre = _nombre;
             }
-
-            public void contador(float objetosDetectados)
+            public class SensorMovimiento : Sensores
             {
+
+                private int _cantidadObjetos;
+
+                public SensorMovimiento(string _nombre)
+                    :base(_nombre)
+                {
+                    this._nombre = "Sensor de Movimiento";
+                    this._cantidadObjetos = _cantidadObjetos;
+                }
+
+                public void detectarObjeto(int _cantidadObjetos)
+                {
+                    Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
+                }
+
                 float cajasActuales = _bueno.cajas;
 
-                if (objetosDetectados == cajasActuales)
+
+                public void contador(float objetosDetectados)
                 {
-                    Console.WriteLine("Sensor: Cantidad correcta de objetos.");
+                    float cajasActuales = _Bueno.cajas;
+
+                    if (objetosDetectados == cajasActuales)
+                    {
+                        Console.WriteLine("Sensor: Cantidad correcta de objetos.");
+                    }
+                    else if (objetosDetectados > cajasActuales)
+                    {
+                        Console.WriteLine("Sensor: Hay demasiados objetos.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sensor: Faltan objetos.");
+                    }
                 }
-                else if (objetosDetectados > cajasActuales)
+            }
+            public class SensorVelocidad : Sensores
+            {
+                private float _velocidad;
+
+                public SensorVelocidad(string _nombre)
+                    : base(_nombre)
                 {
-                    Console.WriteLine("Sensor: Hay demasiados objetos.");
+                    this._nombre = "Sensor de Movimiento";
+                    this._velocidad = _velocidad;
                 }
-                else
+                public void CalcularVelocidad(float _velocidad)
                 {
-                    Console.WriteLine("Sensor: Faltan objetos.");
+                    Console.WriteLine("Sensor: Calculando velocidad...");
                 }
             }
             public Ivanna()
             {
+
+
+           
+
+           
 
             }
 
