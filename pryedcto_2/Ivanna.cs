@@ -81,9 +81,23 @@ namespace pryedcto_2
             {
 
 
-           
+            public class SensorTolva : Sensores
+            {
+                private int _drop;
+                public SensorTolva(string _nombre)
+                    : base(_nombre)
+                {
+                    this._nombre = "Sensor de Tolva";
+                    this._drop = _drop;
+                }
+                public void MedirTemperatura(float _drop)
+                {
+                    Console.WriteLine("Sensor: administrando objetos...");
+                }
+            }
 
-           
+
+
 
             }
 
