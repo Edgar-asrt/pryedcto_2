@@ -2,6 +2,8 @@
 {
     public class Bueno
     {
-
+        public Bueno()
+        {
+        }
     }
 }
