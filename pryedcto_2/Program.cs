@@ -26,10 +26,10 @@ namespace pryedcto_2
        
         static void Main(string[] args)
         {
+
             Instancia instancia = new Instancia();
             instancia.Edgar();
             instancia.Edgar1();
-
         }
     }
 }
