@@ -1,6 +1,6 @@
 ﻿namespace pryedcto_2
 {
-    public class ParteJairo
+    public class Jairo
     {
         public float velocidadd;
         public void Comenzar()

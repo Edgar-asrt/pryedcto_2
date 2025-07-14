@@ -4,8 +4,8 @@ namespace pryedcto_2
 {
     public class Ivanna
     {
-        public class Sensores
-        {
+        
+        
             private Bueno _bueno = new Bueno();
             public bool detectarObjeto()
             {
@@ -36,7 +36,21 @@ namespace pryedcto_2
                     Console.WriteLine("Sensor: Faltan objetos.");
                 }
             }
+            public Ivanna()
+            {
 
+            }
+
+        
+    }
+    public class Sensores: Ivanna
+    {
+        private Bueno _bueno = new Bueno();
+        public void IniciarSensores()
+        {
+           base.detectarObjeto();
+           base.Velocidad();
+           base.contador(_bueno.cajas);    
         }
     }
 }

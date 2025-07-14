@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using Proyecto;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 
 namespace pryedcto_2
@@ -6,21 +7,36 @@ namespace pryedcto_2
     public class Instancia
     {
         public Edgar edgar = new Edgar();
-        public Datos Datos = new Datos(100, 50, 20);  // ✅ ahora sí le das los parámetros requeridos
-
+        public Datos Datos = new Datos(10, 50, 20);  
+        public Ivanna ivanna = new Ivanna();
+        public Bueno Bueno = new Bueno();
+        public Jairo Jairo = new Jairo();   
 
         public void Edgar()
         {
             Ensendido encender = new Ensendido();
             encender.ensender();
+            Datos.Mostrar();
         }
-        public void Edgar1()
+        public void Ivanna()
         {
-           Datos.Mostrar();
+           Sensores sensores = new Sensores();
+           sensores.IniciarSensores();
+        }
+        public void extraccionB()
+        {
+            Bueno bueno = new Bueno();
+            bueno.Mover1();
+        }
+        public void partejairo()
+        {Jairo jairo = new Jairo();
+            jairo.Comenzar();
+            jairo.flexion();
 
         }
 
-}
+
+    }
    internal class Program
     {
        
@@ -29,7 +45,11 @@ namespace pryedcto_2
 
             Instancia instancia = new Instancia();
             instancia.Edgar();
-            instancia.Edgar1();
+            instancia.extraccionB();
+            instancia.Ivanna();
+            instancia.partejairo();
+            
+
         }
     }
 }
