@@ -3,7 +3,7 @@
 
     //2.-Condicionar el objeto para poder moverlo a diferentes direcciones así como
     //agregar o eliminar el mismo objeto para aumentar la cantidad del mismo
-    public class claseBUENO
+    public class Bueno
     {
         public float cajas;
         public int direccion;
