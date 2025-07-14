@@ -4,11 +4,21 @@ namespace pryedcto_2
 {
     public class Ivanna
     {
+
         public class Sensores
         {
             private string _nombre;
 
             private Bueno _Bueno = new Bueno();
+
+        
+        
+            private Bueno _bueno = new Bueno();
+            public bool detectarObjeto()
+            {
+                Console.WriteLine("Sensor: Se detectó objeto...");
+                return true;
+            }
 
             public Sensores(string _nombre)
             {
@@ -16,6 +26,7 @@ namespace pryedcto_2
             }
             public class SensorMovimiento : Sensores
             {
+
                 private int _cantidadObjetos;
 
                 public SensorMovimiento(string _nombre)
@@ -29,6 +40,9 @@ namespace pryedcto_2
                 {
                     Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
                 }
+
+                float cajasActuales = _bueno.cajas;
+
 
                 public void contador(float objetosDetectados)
                 {
@@ -63,11 +77,26 @@ namespace pryedcto_2
                     Console.WriteLine("Sensor: Calculando velocidad...");
                 }
             }
+            public Ivanna()
+            {
+
 
            
 
            
 
+            }
+
+        
+    }
+    public class Sensores: Ivanna
+    {
+        private Bueno _bueno = new Bueno();
+        public void IniciarSensores()
+        {
+           base.detectarObjeto();
+           base.Velocidad();
+           base.contador(_bueno.cajas);    
         }
     }
 }
