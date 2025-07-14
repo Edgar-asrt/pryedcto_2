@@ -19,7 +19,7 @@
             Console.WriteLine("La banda se encuentra en movimiento, no se puede flexionar.");
             
 
-            Console.WriteLine($"la banda se ah detenido, calculando flexion....{flexion}");
+            Console.WriteLine($"la banda se ah detenido, calculando flexion.....{flexion}");
 
             Console.WriteLine("La flexion de la banda es....");
            
