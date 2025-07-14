@@ -9,39 +9,30 @@ namespace pryedcto_2
         {
             private string _nombre;
 
-            private Bueno _Bueno = new Bueno();
-
-        
-        
-            private Bueno _bueno = new Bueno();
-            public bool detectarObjeto()
-            {
-                Console.WriteLine("Sensor: Se detectó objeto...");
-                return true;
-            }
-
             public Sensores(string _nombre)
             {
                 this._nombre = _nombre;
             }
+        }
             public class SensorMovimiento : Sensores
             {
 
                 private int _cantidadObjetos;
+                private string _nombre = "Sensor de Movimiento";
+
+                private Bueno _Bueno = new Bueno();
 
                 public SensorMovimiento(string _nombre)
                     :base(_nombre)
                 {
-                    this._nombre = "Sensor de Movimiento";
                     this._cantidadObjetos = _cantidadObjetos;
                 }
 
                 public void detectarObjeto(int _cantidadObjetos)
                 {
-                    Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
+                 
+                Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
                 }
-
-
 
                 public void contador(float objetosDetectados)
                 {
@@ -64,11 +55,12 @@ namespace pryedcto_2
             public class SensorVelocidad : Sensores
             {
                 private float _velocidad;
+                private string _nombre = "Sensor de Movimiento";
 
                 public SensorVelocidad(string _nombre)
                     : base(_nombre)
                 {
-                    this._nombre = "Sensor de Movimiento";
+                    
                     this._velocidad = _velocidad;
                 }
                 public void CalcularVelocidad(float _velocidad)
@@ -81,10 +73,10 @@ namespace pryedcto_2
             public class SensorTolva : Sensores
             {
                 private int _drop;
-                public SensorTolva(string _nombre)
+                private string _nombre = "Sensor de Tolva";
+            public SensorTolva(string _nombre)
                     : base(_nombre)
                 {
-                    this._nombre = "Sensor de Tolva";
                     this._drop = _drop;
                 }
                 public void MedirTemperatura(float _drop)
@@ -96,7 +88,7 @@ namespace pryedcto_2
 
 
 
-            }
+            
 
         
     }

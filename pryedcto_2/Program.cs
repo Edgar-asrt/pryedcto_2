@@ -20,8 +20,8 @@ namespace pryedcto_2
         }
         public void Ivanna()
         {
-           Sensores sensores = new Sensores();
-           sensores.IniciarSensores();
+           Sensores sensores = new Sensores("Sensor");
+           sensores.detectarObjeto(3);
         }
         public void extraccionB()
         {
