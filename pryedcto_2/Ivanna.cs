@@ -1,11 +1,12 @@
-﻿namespace pryedcto_2
+﻿using Proyecto;
+
+namespace pryedcto_2
 {
     public class Ivanna
     {
         public class Sensores
         {
-            private claseBUENO _claseBUENO = new claseBUENO();
-
+            private Bueno _bueno = new Bueno();
             public bool detectarObjeto()
             {
                 Console.WriteLine("Sensor: Se detectó objeto...");
@@ -20,7 +21,7 @@
 
             public void contador(float objetosDetectados)
             {
-                float cajasActuales = _claseBUENO.cajas;
+                float cajasActuales = _bueno.cajas;
 
                 if (objetosDetectados == cajasActuales)
                 {
@@ -38,3 +39,4 @@
 
         }
     }
+}

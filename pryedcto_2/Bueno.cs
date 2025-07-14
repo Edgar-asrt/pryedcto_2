@@ -3,16 +3,15 @@
 
     //2.-Condicionar el objeto para poder moverlo a diferentes direcciones así como
     //agregar o eliminar el mismo objeto para aumentar la cantidad del mismo
-  
 
-        public Bueno()
-        {
-        
+
+    public class Bueno
+    {
+
 
         public float cajas;
         public int direccion;
-        public class Mover
-        {
+        
 
             public void Mover1()
             {
@@ -22,7 +21,8 @@
                 Console.WriteLine("Elije la cantidad de cajas");
 
                 float cajas = float.Parse(Console.ReadLine());
-            
-        }
+
+            }
+        
     }
 }
