@@ -31,7 +31,7 @@ namespace pryedcto_2
                 public void detectarObjeto()
                 {
                  
-                Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
+                Console.WriteLine("Sensor de Movimiento : Se detectó objeto...");
                 }
 
                 public void contador(float objetosDetectados)
@@ -40,22 +40,21 @@ namespace pryedcto_2
 
                     if (objetosDetectados == cajasActuales)
                     {
-                        Console.WriteLine("Sensor: Cantidad correcta de objetos.");
+                        Console.WriteLine("Sensor de Movimento: Cantidad correcta de objetos.");
                     }
                     else if (objetosDetectados > cajasActuales)
                     {
-                        Console.WriteLine("Sensor: Hay demasiados objetos.");
+                        Console.WriteLine("Sensor de Movimiento: Hay demasiados objetos.");
                     }
                     else
                     {
-                        Console.WriteLine("Sensor: Faltan objetos.");
+                        Console.WriteLine("Sensor de Movimiento: Faltan objetos.");
                     }
                 }
             }
             public class SensorVelocidad : Sensores
             {
                 private float _velocidad;
-                private string _nombre = "Sensor de Movimiento";
 
                 public SensorVelocidad(string _nombre)
                     : base(_nombre)
@@ -65,7 +64,7 @@ namespace pryedcto_2
                 }
                 public void CalcularVelocidad(float _velocidad)
                 {
-                    Console.WriteLine("Sensor: Calculando velocidad...");
+                    Console.WriteLine("Sensor de velocidad: Calculando velocidad...");
                 }
             }
 
@@ -73,22 +72,17 @@ namespace pryedcto_2
             public class SensorTolva : Sensores
             {
                 private int _drop;
-                private string _nombre = "Sensor de Tolva";
+
             public SensorTolva(string _nombre)
                     : base(_nombre)
                 {
                     this._drop = _drop;
                 }
-                public void MedirTemperatura(float _drop)
+                public void drop()
                 {
-                    Console.WriteLine("Sensor: administrando objetos...");
+                    Console.WriteLine("Sensor de Tolva: administrando objetos...");
                 }
             }
-
-
-
-
-            
 
         
     }
