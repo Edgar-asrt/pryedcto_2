@@ -29,8 +29,6 @@ namespace pryedcto_2
             sensorVelocidad.CalcularVelocidad(10);
             SensorTolva sensorTolva = new SensorTolva("Sensor de Tolva");
             sensorTolva.drop();
-
-
         }
         public void extraccionB()
         {
@@ -41,10 +39,13 @@ namespace pryedcto_2
         {
             Jairo2 jairo2 = new Jairo2();
             jairo2.iniciojairo();   
-
         }
-
-
+        public void Proximidad()
+        {
+            // Instancia de SensorProximidad
+            var sensor = new Bueno.SensorProximidad("Sensor de Proximidad");
+            sensor.SensorProx(5.0f);
+        }
     }
    internal class Program
     {
@@ -57,7 +58,7 @@ namespace pryedcto_2
             instancia.extraccionB();
             instancia.Ivanna();
             instancia.partejairo();
-            
+            instancia.Proximidad(); 
 
         }
     }
