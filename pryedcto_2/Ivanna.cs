@@ -4,99 +4,92 @@ namespace pryedcto_2
 {
     public class Ivanna
     {
-
         public class Sensores
         {
-            private string _nombre;
+            protected string _nombre;
+            public Bueno _bueno = new Bueno(); // Aquí se mantiene la referencia al objeto Bueno
 
-            private Bueno _Bueno = new Bueno();
+            public Sensores(string nombre)
+            {
+                _nombre = nombre;
+            }
 
-        
-        
-            private Bueno _bueno = new Bueno();
             public bool detectarObjeto()
             {
                 Console.WriteLine("Sensor: Se detectó objeto...");
                 return true;
             }
+        }
 
-            public Sensores(string _nombre)
+        public class SensorMovimiento : Sensores
+        {
+            private int _cantidadObjetos;
+
+            public SensorMovimiento(string nombre, int cantidadObjetos)
+                : base(nombre)
             {
-                this._nombre = _nombre;
+                _cantidadObjetos = cantidadObjetos;
             }
-            public class SensorMovimiento : Sensores
+
+            public void detectarMovimiento()
             {
+                Console.WriteLine($"Sensor {_nombre} : Se detectaron {_cantidadObjetos} objetos.");
+            }
 
-                private int _cantidadObjetos;
-
-                public SensorMovimiento(string _nombre)
-                    :base(_nombre)
-                {
-                    this._nombre = "Sensor de Movimiento";
-                    this._cantidadObjetos = _cantidadObjetos;
-                }
-
-                public void detectarObjeto(int _cantidadObjetos)
-                {
-                    Console.WriteLine("Sensor {0} : Se detectó objeto..." + _nombre);
-                }
-
+            public void contador(float objetosDetectados)
+            {
                 float cajasActuales = _bueno.cajas;
 
-
-                public void contador(float objetosDetectados)
+                if (objetosDetectados == cajasActuales)
                 {
-                    float cajasActuales = _Bueno.cajas;
-
-                    if (objetosDetectados == cajasActuales)
-                    {
-                        Console.WriteLine("Sensor: Cantidad correcta de objetos.");
-                    }
-                    else if (objetosDetectados > cajasActuales)
-                    {
-                        Console.WriteLine("Sensor: Hay demasiados objetos.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Sensor: Faltan objetos.");
-                    }
+                    Console.WriteLine("Sensor: Cantidad correcta de objetos.");
+                }
+                else if (objetosDetectados > cajasActuales)
+                {
+                    Console.WriteLine("Sensor: Hay demasiados objetos.");
+                }
+                else
+                {
+                    Console.WriteLine("Sensor: Faltan objetos.");
                 }
             }
-            public class SensorVelocidad : Sensores
-            {
-                private float _velocidad;
+        }
 
-                public SensorVelocidad(string _nombre)
-                    : base(_nombre)
-                {
-                    this._nombre = "Sensor de Movimiento";
-                    this._velocidad = _velocidad;
-                }
-                public void CalcularVelocidad(float _velocidad)
-                {
-                    Console.WriteLine("Sensor: Calculando velocidad...");
-                }
-            }
-            public Ivanna()
-            {
-
-
-           
-
-           
-
-            }
-
-        
-    }
-    public class Sensores: Ivanna
-    {
-        private Bueno _bueno = new Bueno();
-        public void IniciarSensores()
+        public class SensorVelocidad : Sensores
         {
-           base.detectarObjeto();
-           base.Velocidad();
-           base.contador(_bueno.cajas);    
+            private float _velocidad;
+
+            public SensorVelocidad(string nombre, float velocidad)
+                : base(nombre)
+            {
+                _velocidad = velocidad;
+            }
+
+            public void CalcularVelocidad()
+            {
+                Console.WriteLine($"Sensor {_nombre}: Calculando velocidad: {_velocidad} m/s");
+            }
+        }
+    }
+
+    public class ExtraccionIV : Ivanna
+    {
+        private SensorMovimiento sensorMov;
+        private SensorVelocidad sensorVel;
+
+        public ExtraccionIV()
+        {
+            // Crear sensores con valores que tú quieras
+            sensorMov = new SensorMovimiento("Movimiento01", 5);
+            sensorVel = new SensorVelocidad("Velocidad01", 2.5f);
+        }
+
+        public void Ejecutar()
+        {
+            sensorMov.detectarMovimiento();
+            sensorMov.contador(5); // puedes pasar el valor desde afuera también
+
+            sensorVel.CalcularVelocidad();
         }
     }
 }
