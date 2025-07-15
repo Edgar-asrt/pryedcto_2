@@ -21,16 +21,16 @@ namespace Proyecto
         public int direccion;
         
 
-            public void Mover1()
-            {
-                Console.WriteLine("Elije la direccion");
-                Console.WriteLine("Izquierda(1) o Derecha(0)");
-                int direccion = int.Parse(Console.ReadLine());
-                Console.WriteLine("Elije la cantidad de cajas");
-
-                float cajas = float.Parse(Console.ReadLine());
-
-            }
+        public void Mover1()
+        {
+            Console.WriteLine("Elige la dirección");
+            Console.WriteLine("Izquierda (1) o Derecha (0)");
+            this.direccion = int.Parse(Console.ReadLine());
+            Console.WriteLine("Elige la cantidad de cajas");
+            this.cajas = float.Parse(Console.ReadLine());
+            Console.WriteLine($"Cantidad de cajas seleccionada: {this.cajas}");
+        }
+        
         public class SensorProximidad : Sensores2
         {
             private float _velocidad;
@@ -44,8 +44,26 @@ namespace Proyecto
             public void SensorProx(float _proximi)
             {
                 Console.WriteLine("Sensor de proximidad: Detectando objetos...");
+                Console.WriteLine("Sensor de proximidad: Objetos detectados...");
             }
         }
 
+        public class SensorMovimiento : Sensores2
+        {
+            private int _cantidadObjetos;
+            private string _nombre = "Sensor de Movimiento";
+            private Bueno _Bueno;
+
+            public SensorMovimiento(string _nombre, Bueno bueno)
+                : base(_nombre)
+            {
+                this._Bueno = bueno;
+            }
+        }
+
+        public void CrearSensorMovimiento()
+        {
+            SensorMovimiento sensorMovimiento = new SensorMovimiento("Sensor de Movimiento", this);
+        }
     }
 }

@@ -1,72 +1,75 @@
 ﻿namespace pryedcto_2
 {
+    // Clase principal Edgar
     public class Edgar
     {
-
-
         public Edgar()
         {
+        }
 
-        }
-        public void inicio()
+        public void Inicio()
         {
-            Console.WriteLine("Hola jefe");
+            Console.WriteLine("Inicianlizando maquina.");
         }
-        public void Mover1()
+
+        public void MensajeInicio()
         {
-            Console.WriteLine("El programa comenzará prontoo");
+            Console.WriteLine("El programa comenzará pronto.");
         }
     }
 
-        public class Ensendido:Edgar
+    // Clase para encender la banda, hereda de Edgar
+    public class Encendido : Edgar
+    {
+        public void Encender()
         {
-            public void ensender()
-        { 
-                base.inicio();
-                Console.WriteLine("La banda se ha encendido");
-            }
-             
+            base.Inicio();
+            Console.WriteLine("La banda se ha encendido.");
         }
+    }
 
-        public class ErenciaEd : Edgar
+    // Clase para demostrar herencia y sobrecarga de métodos
+    public class HerenciaEdgar : Edgar
+    {
+        public void MostrarMensajes()
         {
-            public void sobrecarga()
-            {
-                base.inicio();
-                base.Mover1();
-            }
+            base.Inicio();
+            base.MensajeInicio();
         }
-    
-        public class Motor
-        {
+    }
+
+    // Clase Motor con propiedades y método para mostrar datos
+    public class Motor
+    {
         public int Velocidad { get; set; }
         public int Aceleracion { get; set; }
         public int Frenado { get; set; }
 
-        public Motor(int velocidad, int aceleracion, int frado)
-            {
-                this.Velocidad = velocidad;
-                this.Aceleracion = aceleracion;
-                this.Frenado = frado;
-            }
-            public void MostrarDatos()
-            {
-                Console.WriteLine($"Velocidad: {Velocidad}, Aceleración: {Aceleracion}, Frenado: {Frenado}");
-            }
-
-        }
-        public class Datos : Motor
+        public Motor(int velocidad, int aceleracion, int frenado)
         {
-            public Datos(int velocidad, int aceleracion, int frado) : base(velocidad, aceleracion, frado)
-            {
-            
-            }
-            public void Mostrar()
-            {
-                base.MostrarDatos();
-                Console.WriteLine("Datos del motor mostrados correctamente.");
-            }
-        
+            Velocidad = velocidad;
+            Aceleracion = aceleracion;
+            Frenado = frenado;
+        }
+
+        public void MostrarDatos()
+        {
+            Console.WriteLine($"Velocidad: {Velocidad}, Aceleración: {Aceleracion}, Frenado: {Frenado}");
+        }
+    }
+
+    // Clase Datos que hereda de Motor y agrega un mensaje adicional
+    public class Datos : Motor
+    {
+        public Datos(int velocidad, int aceleracion, int frenado) : base(velocidad, aceleracion, frenado)
+        {
+        }
+
+        public void Mostrar()
+        {
+            base.MostrarDatos();
+            Console.WriteLine("Datos del motor mostrados correctamente.");
+        }
     }
 }
 

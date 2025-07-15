@@ -16,13 +16,13 @@ namespace pryedcto_2
 
         public void Edgar()
         {
-            Ensendido encender = new Ensendido();
-            encender.ensender();
+            Encendido encender = new Encendido();
+            encender.Encender();
             Datos.Mostrar();
         }
         public void Ivanna()
         {
-            SensorMovimiento sensorMovimiento = new SensorMovimiento("Sensor de Movimiento");   
+            SensorMovimiento sensorMovimiento = new SensorMovimiento("Sensor de Movimiento", Bueno);   
             sensorMovimiento.detectarObjeto();
             sensorMovimiento.contador(10);
             SensorVelocidad sensorVelocidad = new SensorVelocidad("Sensor de Velocidad");
@@ -32,13 +32,12 @@ namespace pryedcto_2
         }
         public void extraccionB()
         {
-            Bueno bueno = new Bueno();
-            bueno.Mover1();
+            Bueno.Mover1();
         }
         public void partejairo()
         {
             Jairo2 jairo2 = new Jairo2();
-            jairo2.iniciojairo();   
+            jairo2.IniciarJairo();   
         }
         public void Proximidad()
         {
