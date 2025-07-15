@@ -27,6 +27,15 @@
 
 
     }
+    public class Jairo2
+    {
+        public void iniciojairo()
+        {
+            Jairo jairo = new Jairo();
+            jairo.Comenzar();
+            jairo.flexion();
+        }
+    }
     
 
 

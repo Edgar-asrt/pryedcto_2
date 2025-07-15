@@ -1,6 +1,7 @@
-﻿using Proyecto;
+using Proyecto;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
+using static pryedcto_2.Ivanna;
 
 namespace pryedcto_2
 {
@@ -11,6 +12,7 @@ namespace pryedcto_2
         public Ivanna ivanna = new Ivanna();
         public Bueno Bueno = new Bueno();
         public Jairo Jairo = new Jairo();   
+        public Sensores Sensores = new Sensores("Sensores");
 
         public void Edgar()
         {
@@ -20,8 +22,15 @@ namespace pryedcto_2
         }
         public void Ivanna()
         {
-           ExtraccionIV extraer = new ExtraccionIV();
-           extraer.Ejecutar();
+            SensorMovimiento sensorMovimiento = new SensorMovimiento("Sensor de Movimiento");   
+            sensorMovimiento.detectarObjeto();
+            sensorMovimiento.contador(10);
+            SensorVelocidad sensorVelocidad = new SensorVelocidad("Sensor de Velocidad");
+            sensorVelocidad.CalcularVelocidad(10);
+            SensorTolva sensorTolva = new SensorTolva("Sensor de Tolva");
+            sensorTolva.drop();
+
+
         }
         public void extraccionB()
         {
@@ -29,9 +38,9 @@ namespace pryedcto_2
             bueno.Mover1();
         }
         public void partejairo()
-        {Jairo jairo = new Jairo();
-            jairo.Comenzar();
-            jairo.flexion();
+        {
+            Jairo2 jairo2 = new Jairo2();
+            jairo2.iniciojairo();   
 
         }
 
