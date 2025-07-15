@@ -1,4 +1,4 @@
-﻿using Proyecto;
+using Proyecto;
 
 namespace pryedcto_2
 {
@@ -80,7 +80,8 @@ namespace pryedcto_2
                 }
                 public void drop()
                 {
-                    Console.WriteLine("Sensor de Tolva: administrando objetos...");
+                    Console.WriteLine("S" +
+                        "   ensor de Tolva: administrando objetos...");
                 }
             }
 

@@ -1,4 +1,4 @@
-﻿using Proyecto;
+using Proyecto;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using static pryedcto_2.Ivanna;
