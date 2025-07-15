@@ -19,7 +19,8 @@ namespace pryedcto_2
 
         public void IvannaInicio()
         {
-            ivanna.ActivarSensores();  // ✅ Este método ya existe y funciona
+           ExtraccionIV extraer = new ExtraccionIV();
+           extraer.Ejecutar();
         }
 
         public void extraccionB()

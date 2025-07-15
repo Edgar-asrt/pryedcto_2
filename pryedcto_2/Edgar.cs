@@ -14,7 +14,7 @@
         }
         public void Mover1()
         {
-            Console.WriteLine("El programa comenzará pronto");
+            Console.WriteLine("El programa comenzará prontoo");
         }
     }
 
