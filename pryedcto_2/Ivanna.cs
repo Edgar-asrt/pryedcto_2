@@ -20,8 +20,8 @@ namespace pryedcto_2
             private string _nombre = "Sensor de Movimiento";
             private Bueno _Bueno;
 
-            public SensorMovimiento(string _nombre, Bueno bueno)
-                : base(_nombre)
+            public SensorMovimiento(string _nombre, Bueno bueno) : base(_nombre)
+
             {
                 this._Bueno = bueno;
             }
@@ -78,8 +78,7 @@ namespace pryedcto_2
             }
             public void drop()
             {
-                Console.WriteLine("S" +
-                    "   ensor de Tolva: administrando objetos...");
+                Console.WriteLine("S ensor de Tolva: administrando objetos...");
             }
         }
 

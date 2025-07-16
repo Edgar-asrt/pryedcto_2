@@ -36,8 +36,8 @@ namespace pryedcto_2
         }
         public void partejairo()
         {
-            Jairo2 jairo2 = new Jairo2();
-            jairo2.IniciarJairo();   
+            jairo2 jairo2 = new jairo2();   
+            jairo2.IniciarJairo();  
         }
         public void Proximidad()
         {
